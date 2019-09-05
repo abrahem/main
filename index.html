@@ -572,7 +572,19 @@
 	function hideLoading() {
        app.preloader.hide();
     }
+    var n = navigator.userAgent.includes("99990000");
+      if (n == true) {
+
+      } else {
+            var n = navigator.userAgent.includes("SevenZero");
+            if (n == true) {
+
+            } else {
+              document.getElementById("adspop").setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
+            }
+          }
   </script>
+  <script id="adspop"type="text/javascript"  async data-cfasync="false"></script>
   <!-- App routes -->
   <script src="js/routes.js"></script>
   <!-- Your custom app scripts -->
