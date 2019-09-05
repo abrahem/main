@@ -64,14 +64,9 @@ app.preloader.show();
     }
       var obj = JSON.parse(xhttp.responseText);
       for (i = 0; i < obj.length; i++) {
-        toDataURL(
-          obj[i].image,
-          function(dataUrl) {
-            var oimg = dataUrl;
-            var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-            createitem(oimg,obj[i].name,obj[i].epName,id,obj[i].status,obj[i].year);
-          }
-        )
+        var oimg = obj[i].image;
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        createitem(oimg,obj[i].name,obj[i].epName,id,obj[i].status,obj[i].year);
       }
       app.preloader.hide();
     }
