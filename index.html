@@ -65,6 +65,13 @@
 									</div>
 								  </a>
                 </li>
+                  	<li style=""><a onclick="" data-popup=".popup-players" class="item-link item-content popup-open" style="padding: 4px;">
+									<div class="item-media"><i class="icon material-icons">flash_on</i></div>
+									<div class="item-inner" style="margin-top: 0px; margin-left: 0px; ">
+									  <div class="item-title">أختبار المشغل</div>
+									</div>
+								  </a>
+                </li>
 								<li style=""><a onclick="openf();" data-popup=".popup-favorite" class="item-link item-content popup-open" style="padding: 4px;">
 									<div class="item-media"><i class="icon material-icons">flash_on</i></div>
 									<div class="item-inner" style="margin-top: 0px; margin-left: 0px; ">
@@ -503,6 +510,42 @@
       <div class="dialog-buttons">
           <span onclick="newsclose()" class="dialog-button">خروج</span>
           <span class="dialog-button dialog-button-bold">مشاركة الخبر</span>
+      </div>
+    </div>
+  
+  
+  
+  
+    <div class="popup popup-players">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner sliding">
+          <div class="left">
+            <a onclick="document.getElementById('players').innerHTML = '';" href="#" class="link popup-close">
+              <i class="icon icon-back"></i>
+              <span class="ios-only">Back</span>
+            </a>
+          </div>
+          <div class="title">المشغل</div>
+        </div>
+      </div>
+      <div class="page-content">
+        <style>
+      div.b {
+  white-space: nowrap; 
+  width: 150px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+</style>
+        <div style="display: block; background-color: white; padding-top: 0px;" id="players" class="page-content">
+          <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
+      controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+      data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+    <source src="https://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
+    <source src="https://vjs.zencdn.net/v/oceans.webm" type='video/webm' />
+  </video>
+        </div>
       </div>
     </div>
   <!-- Cordova -->
