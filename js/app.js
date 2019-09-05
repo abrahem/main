@@ -64,9 +64,14 @@ app.preloader.show();
     }
       var obj = JSON.parse(xhttp.responseText);
       for (i = 0; i < obj.length; i++) {
-        var oimg = obj[i].image;
-        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-        createitem(oimg,obj[i].name,obj[i].epName,id,obj[i].status,obj[i].year);
+        toDataURL(
+          obj[i].image,
+          function(dataUrl) {
+            var oimg = dataUrl;
+            var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+            createitem(oimg,obj[i].name,obj[i].epName,id,obj[i].status,obj[i].year);
+          }
+        )
       }
       app.preloader.hide();
     }
@@ -1407,4 +1412,23 @@ function stopplayer() {
     player.pause()
   });
   document.getElementById("playerlayout").style.display = "none";
+}
+function toDataURL(src, callback, outputFormat) {
+  var img = new Image();
+  img.crossOrigin = 'Anonymous';
+  img.onload = function() {
+    var canvas = document.createElement('CANVAS');
+    var ctx = canvas.getContext('2d');
+    var dataURL;
+    canvas.height = this.naturalHeight;
+    canvas.width = this.naturalWidth;
+    ctx.drawImage(this, 0, 0);
+    dataURL = canvas.toDataURL(outputFormat);
+    callback(dataURL);
+  };
+  img.src = src;
+  if (img.complete || img.complete === undefined) {
+    img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    img.src = src;
+  }
 }
