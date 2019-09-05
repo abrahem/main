@@ -19,9 +19,12 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="maValidation" content="b72cb7f8cd299b9764e90c090c1e96ca" />
   <meta name="msapplication-tap-highlight" content="no">
+  
   <link href="https://main.snoanime.com/app_icon.png" type="image/x-icon" rel="icon" /><link href="https://main.snoanime.com/app_icon.png" type="image/x-icon" rel="shortcut icon" />
   <title>SnoAnime X</title>
 
+  <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
   <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/notif.css">
   <link rel="stylesheet" href="css/icons.css">
@@ -539,7 +542,7 @@
 }
 </style>
         <div style="display: block; background-color: white; padding-top: 0px;" id="players" class="page-content">
-          <video id="my_video_1" class="video-js vjs-default-skin" width="640px" height="267px"
+  <video id='my-video' class='video-js' controls preload='auto' width='640' height='264'
       controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
       data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
     <source src="https://vjs.zencdn.net/v/oceans.mp4" type='video/mp4' />
@@ -558,6 +561,7 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/timeago.min.js"></script>
   <script src="js/timeago.locales.min.js"></script>
+  <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
   <script type="text/javascript">
     function showLoading() {
        app.preloader.show();
