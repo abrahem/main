@@ -1401,3 +1401,10 @@ function hideSearch() {
 function showSearch() {
   document.getElementById("btnsearch").style.display = "block";
 }
+function stopplayer() {
+  videojs("video_1", {}, function() {
+    var player = this;
+    player.pause()
+  });
+  document.getElementById("playerlayout").style.display = "none";
+}
