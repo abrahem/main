@@ -543,11 +543,7 @@
 }
 </style>
         <div style="display: block; background-color: white; padding-top: 0px;" id="players" class="page-content">
- <video id="video_1" class="video-js vjs-default-skin" controls preload="auto" data-setup='{}'>
-      <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.720p.webm" type="video/webm" label="720P">
-      <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.480p.webm" type="video/webm" label="480P" selected="true">
-      <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.360p.webm" type="video/webm" label="360P">
-      <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.240p.webm" type="video/webm" label="240P">
+ <video id="video_1" style="height: 100%;width: 100%;" class="video-js vjs-default-skin" controls preload="auto" data-setup='{}'>
    </video>
         </div>
       </div>
@@ -555,6 +551,24 @@
       <script>
          videojs("video_1", {}, function() {
          var player = this;
+           player.src([
+   {
+      src: 'https://example.com/video_720.mp4',
+      type: 'video/mp4',
+      label: '720P',
+   },
+   {
+      src: 'https://example.com/video_480.mp4',
+      type: 'video/mp4',
+      label: '480P',
+      selected: true,
+   },
+   {
+      src: 'https://example.com/video_360.mp4',
+      type: 'video/mp4',
+      label: '360P',
+   },
+]);
          player.controlBar.addChild('QualitySelector');
       });
       </script>
