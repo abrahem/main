@@ -552,6 +552,12 @@
         </div>
       </div>
     </div>
+      <script>
+      videojs("my-video", {}, function() {
+         var player = this;
+         player.controlBar.addChild('QualitySelector');
+      });
+      </script>
   <!-- Cordova -->
   <!--
   <script src="cordova.js"></script>
