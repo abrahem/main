@@ -552,7 +552,6 @@ function shows(id) {
                      selected: true,
                    }
                  ]);
-                player.controlBar.addChild('QualitySelector');
              });
             });
             }
