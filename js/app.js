@@ -533,29 +533,38 @@ function shows(id) {
                 window.location.href = "https://snoanime.com/ios.php/?id="+id+"&epid="+id+"&api=https://snoanime.com/api/new/server.php";
             } else {
             app.preloader.show();
-            app.request.get('https://snoanime.com/api/new/serverweb.php/?id='+id, function (data) {
-              app.preloader.hide();
-              document.getElementById("playerlayout").style.display = "block";
-              document.getElementById("openplayer").click();
-              videojs("video_1", {}, function() {
-                var obj = JSON.parse(data);
-                var player = this;
-                  player.src([
-                   {
-                     src: obj["result"][0].hdURl,
-                     type: 'video/mp4',
-                     label: '720P',
-                   },
-                   {
-                     src: obj["result"][0].sdURl,
-                     type: 'video/mp4',
-                     label: '360P',
-                     selected: true,
-                   }
-                 ]);
-                 player.play();
-             });
-            });
+            app.request.setup({
+              url:'https://snoanime.com/api/new/serverweb.php/?id='+id,
+              success:function(data){
+                app.preloader.hide();
+                document.getElementById("playerlayout").style.display = "block";
+                document.getElementById("openplayer").click();
+                videojs("video_1", {}, function() {
+                  var obj = JSON.parse(data);
+                  var player = this;
+                    player.src([
+                     {
+                       src: obj["result"][0].hdURl,
+                       type: 'video/mp4',
+                       label: '720P',
+                     },
+                     {
+                       src: obj["result"][0].sdURl,
+                       type: 'video/mp4',
+                       label: '360P',
+                       selected: true,
+                     }
+                   ]);
+                   player.play();
+               });                
+              },
+              error:function(data){
+                app.preloader.hide();
+                alert("توجد مشكلة في الشبكة حاول مرى اخرى")
+              },
+            })
+            app.request({method:'GET'});
+
             }
       }
 }
