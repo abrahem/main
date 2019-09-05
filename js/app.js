@@ -530,9 +530,31 @@ function shows(id) {
             if (n == true) {
                 var idg = localStorage.getItem("id");
                 idg = idg.replace("https://snoanime.com/api/new/info.php/?url=", "");
-                window.location.href = "https://snoanime.com/ios.php/?id="+idg+"&epid="+id+"&api=https://snoanime.com/api/new/server.php";
+                window.location.href = "https://snoanime.com/ios.php/?id="+id+"&epid="+id+"&api=https://snoanime.com/api/new/server.php";
             } else {
-            opensS();
+            app.preloader.show();
+            app.request.get('https://snoanime.com/api/new/serverweb.php/?=id'+id, function (data) {
+              app.preloader.hide();
+              document.getElementById("openplayer").click;
+              videojs("video_1", {}, function() {
+                var obj = JSON.parse(data);
+                var player = this;
+                  player.src([
+                   {
+                     src: obj["result"][0].hdURl,
+                     type: 'video/mp4',
+                     label: '720P',
+                   },
+                   {
+                     src: obj["result"][0].sdURl,
+                     type: 'video/mp4',
+                     label: '360P',
+                     selected: true,
+                   }
+                 ]);
+                player.controlBar.addChild('QualitySelector');
+             });
+            });
             }
       }
 }
