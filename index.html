@@ -580,12 +580,13 @@
             if (n == true) {
 
             } else {
-              var ads = document.getElementById("adspop");
-              ads.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
+              document.getElementById("adspop").innerHTML = '<script type="text/javascript" src="//deloplen.com/apu.php?zoneid=2803542" async data-cfasync="false"></script>'
             }
           }
   </script>
-  <script id="adspop"type="text/javascript"  async data-cfasync="false"></script>
+  <div id="adspop">
+
+  </div>
   <!-- App routes -->
   <script src="js/routes.js"></script>
   <!-- Your custom app scripts -->
