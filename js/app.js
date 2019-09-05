@@ -552,6 +552,7 @@ function shows(id) {
                      selected: true,
                    }
                  ]);
+                 player.play();
              });
             });
             }
