@@ -533,9 +533,9 @@ function shows(id) {
                 window.location.href = "https://snoanime.com/ios.php/?id="+id+"&epid="+id+"&api=https://snoanime.com/api/new/server.php";
             } else {
             app.preloader.show();
-            app.request.get('https://snoanime.com/api/new/serverweb.php/?=id'+id, function (data) {
+            app.request.get('https://snoanime.com/api/new/serverweb.php/?id='+id, function (data) {
               app.preloader.hide();
-              document.getElementById("openplayer").click;
+              document.getElementById("openplayer").click();
               videojs("video_1", {}, function() {
                 var obj = JSON.parse(data);
                 var player = this;
