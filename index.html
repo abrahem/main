@@ -55,14 +55,14 @@
 						<div id="navbar-profile-content">
 							<div class="list no-hairlines no-hairlines-between" style="margin: 0px;">
 							  <ul style="background: white;color: black;">
-							  <li style=""><a onclick="ifre()" class="item-link item-content panel-close" style="padding: 4px;">
+							  <li><a onclick="ifre()" class="item-link item-content panel-close" style="padding: 4px;">
 									<div class="item-media"><i class="icon material-icons">fingerprint</i></div>
 									<div class="item-inner" style="margin-top: 0px; margin-left: 0px;">
 									  <div id="btns" class="item-title">تسجيل دخول أو أنشاء حساب</div>
 									</div>
 								  </a>
 								</li>
-								<li style=""><a onclick="opennews()" data-popup=".popup-news" class="item-link item-content popup-open" style="padding: 4px;">
+								<li></li><a onclick="opennews()" data-popup=".popup-news" class="item-link item-content popup-open" style="padding: 4px;">
 									<div class="item-media"><i class="icon material-icons">flash_on</i></div>
 									<div class="item-inner" style="margin-top: 0px; margin-left: 0px; ">
 									  <div class="item-title">أخبار ألانمي</div>
@@ -76,14 +76,14 @@
 									</div>
 								  </a>
                 </li>
-								<li style=""><a onclick="openf();" data-popup=".popup-favorite" class="item-link item-content popup-open" style="padding: 4px;">
+								<li><a onclick="openf();" data-popup=".popup-favorite" class="item-link item-content popup-open" style="padding: 4px;">
 									<div class="item-media"><i class="icon material-icons">flash_on</i></div>
 									<div class="item-inner" style="margin-top: 0px; margin-left: 0px; ">
 									  <div class="item-title">المفضلة</div>
 									</div>
 								  </a>
                 </li>
-                <li style=""><a onclick="opengenere();" data-popup=".popup-genre" class="item-link item-content popup-open" style="padding: 4px;">
+                <li><a onclick="opengenere();" data-popup=".popup-genre" class="item-link item-content popup-open" style="padding: 4px;">
 									<div class="item-media"><i class="icon material-icons">flash_on</i></div>
 									<div class="item-inner" style="margin-top: 0px; margin-left: 0px; ">
 									  <div class="item-title">التصنيفات</div>
@@ -177,7 +177,7 @@
 
         <!-- Login form -->
         <form class="">
-          <div class="list" style="">
+          <div class="list">
             <ul style="padding: 10px;" class="">
               <li class="item-content item-input">
                 <div class="item-inner">
@@ -295,7 +295,7 @@
               <!-- Tabbar for switching views-tabs -->
               <div id="view-home" class="view view-main tab tab-active">
                   <div class="page" data-name="home">
-                      <div class="card" style="">
+                      <div class="card">
                         <li style="display: inherit;">
                           <a class="">
                             <div class="card-content">
@@ -516,11 +516,7 @@
           <span class="dialog-button dialog-button-bold">مشاركة الخبر</span>
       </div>
     </div>
-  
-  
-  
-  
-    <div class="popup popup-players">
+    <div id="playerlayout" class="popup popup-players modal-in" style="display: none;" >
     <div class="page">
       <div class="navbar">
         <div class="navbar-inner sliding">
@@ -554,6 +550,7 @@
          </script>
       </div>
     </div>
+  </div>
   <!-- Cordova -->
   <!--
   <script src="cordova.js"></script>
@@ -580,9 +577,13 @@
             if (n == true) {
 
             } else {
-              document.getElementById("adspop").innerHTML = '<script type="text/javascript" src="//deloplen.com/apu.php?zoneid=2803542" async data-cfasync="false"></script>';
+              var script = document.createElement("script");
+              script.setAttribute("type","text/javascript");
+              script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
+              script.setAttribute("async data-cfasync","false");
+              document.getElementById("adspop").appendChild(script);
             }
-          }
+      }
   </script>
   <div id="adspop">
   </div>
