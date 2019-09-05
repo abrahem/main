@@ -535,6 +535,7 @@ function shows(id) {
             app.preloader.show();
             app.request.get('https://snoanime.com/api/new/serverweb.php/?id='+id, function (data) {
               app.preloader.hide();
+              document.getElementById("playerlayout").style.display = "block";
               document.getElementById("openplayer").click();
               videojs("video_1", {}, function() {
                 var obj = JSON.parse(data);
