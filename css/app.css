@@ -122,3 +122,13 @@ $slider-bg-color: lighten($primary-background-color, 33%);
   /* Otherwise we'll rely on stacked opacities */
   background: rgba($slider-bg-color, 0.75);
 }
+ #instructions { max-width: 640px; text-align: left; margin: 30px auto; }
+ #instructions textarea { width: 100%; height: 100px; }
+  
+  /* Show the controls (hidden at the start by default) */
+  .video-js .vjs-control-bar { 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
