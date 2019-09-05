@@ -55,7 +55,8 @@ $$('#my-login-screen .login-button').on('click', function () {
 app.preloader.show();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    var n = navigator.userAgent.includes("99990000");
+    if (this.readyState == 4 && this.status == 200) {
+      var n = navigator.userAgent.includes("99990000");
       if (n == true) {
 
       } else {
@@ -70,7 +71,6 @@ app.preloader.show();
               document.getElementById("adspop").appendChild(script);
             }
 }      
-    if (this.readyState == 4 && this.status == 200) {
     if (localStorage.getItem("SaveLogin")) {
 	   toastBottom.open();
 	   document.getElementById("btns").innerText = "تسجيل خروج";
