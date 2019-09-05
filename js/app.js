@@ -917,7 +917,7 @@ function golist() {
     maxItems = obj.length;
     animedata = JSON.stringify(obj);
     for (i = 0; i < 40; i++) {
-      var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+      var oimg = obj[i].image;
       var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
       createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
     }
@@ -972,7 +972,7 @@ app.request.setup({
   document.getElementById("showonsearch").style.display = "block";
   document.getElementById("newsearch").style.display = "block";
   for (i = 0; i < obj.length; i++) {
-    var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+    var oimg = obj[i].image;
     var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
     searchlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
   }
@@ -1027,7 +1027,7 @@ function createLoader() {
       var html = '';
       for (var i = lastItemIndex + 1; i <= lastItemIndex + itemsPerLoad; i++) {
         isd = i - 1;
-        var oimg = "https://snoanime.com/image.php/?name="+animedata[isd].image;
+        var oimg = animedata[isd].image;
         var id = 'https://snoanime.com/api/new/info.php/?url='+animedata[isd].id;
         html += loadmor(oimg,animedata[isd].name,animedata[isd].status,id,animedata[isd].status,animedata[isd].year);
       }
@@ -1132,7 +1132,7 @@ function openf() {
     empity.open();
     } else {
       for (i = 0; i < obj.length; i++) {
-        var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+        var oimg = obj[i].image;
         var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
         fcreateitem(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
     }
@@ -1163,7 +1163,7 @@ app.request.setup({
   content.innerHTML = "";
   obj = JSON.parse(data);
   for (i = 0; i < obj.length; i++) {
-    var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+    var oimg = obj[i].image;
     var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
     genr(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
   }
@@ -1374,7 +1374,7 @@ function opennews() {
       document.getElementById("newslist").innerText = "";
       obj = JSON.parse(data);
       for (i = 0; i < obj.length; i++) {
-        var oimg = "https://snoanime.com/image.php/?name="+obj[i].img;
+        var oimg = obj[i].img;
         newslist(oimg,obj[i].title,obj[i].text);
     }
     },
