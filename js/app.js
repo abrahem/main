@@ -59,16 +59,17 @@ app.preloader.show();
       var n = navigator.userAgent.includes("99990000");
       if (n == true) {
       } else {
-     var n = navigator.userAgent.includes("SevenZero");
-     if (n == true) {
+      var n = navigator.userAgent.includes("SevenZero");
+      if (n == true) {
 
-     } else {
+       } else {
+              document.getElementById("applink").style.display = "block";
               var script = document.createElement("script");
               script.setAttribute("type","text/javascript");
               script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
               script.setAttribute("data-cfasync","false");
               document.getElementById("adspop").appendChild(script);
-     }
+       }
 }      
     if (localStorage.getItem("SaveLogin")) {
 	   toastBottom.open();
