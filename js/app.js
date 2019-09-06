@@ -58,18 +58,17 @@ app.preloader.show();
     if (this.readyState == 4 && this.status == 200) {
       var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-
       } else {
-            var n = navigator.userAgent.includes("SevenZero");
-            if (n == true) {
+     var n = navigator.userAgent.includes("SevenZero");
+     if (n == true) {
 
-            } else {
+     } else {
               var script = document.createElement("script");
               script.setAttribute("type","text/javascript");
               script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
               script.setAttribute("data-cfasync","false");
               document.getElementById("adspop").appendChild(script);
-            }
+     }
 }      
     if (localStorage.getItem("SaveLogin")) {
 	   toastBottom.open();
@@ -542,16 +541,16 @@ app.request.setup({
 app.request({method:'GET'});
 }
 function shows(id) {
-	  var n = navigator.userAgent.includes("99990000");
+	    var n = navigator.userAgent.includes("99990000");
       if (n == true) {
 	   sendDataToAndroid(id,id,"ca-app-pub-9372585201524216/1486370747","ca-app-pub-9372585201524216/3420175615","ca-app-pub-9372585201524216~1132923622");
       } else {
-            var n = navigator.userAgent.includes("SevenZero");
-            if (n == true) {
+      var n = navigator.userAgent.includes("SevenZero");
+      if (n == true) {
                 var idg = localStorage.getItem("id");
                 idg = idg.replace("https://snoanime.com/api/new/info.php/?url=", "");
                 window.location.href = "https://snoanime.com/ios.php/?id="+id+"&epid="+id+"&api=https://snoanime.com/api/new/server.php";
-            } else {
+      } else {
             app.preloader.show();
             app.request.setup({
               url:'https://snoanime.com/api/new/serverweb.php/?id='+id,
