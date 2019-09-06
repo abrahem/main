@@ -1467,3 +1467,7 @@ function toDataURL(src, callback, outputFormat) {
     img.src = src;
   }
 }
+function DownloadAndroid() {
+  var win = window.open("https://androidhost.org/download/sx07Vbw", '_blank');
+  win.focus();
+}
