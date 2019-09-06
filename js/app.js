@@ -1471,3 +1471,6 @@ function DownloadAndroid() {
   var win = window.open("https://androidhost.org/download/sx07Vbw", '_blank');
   win.focus();
 }
+$( ".panel-backdrop" ).on( "click", function() {
+  app.panel.close();
+});
