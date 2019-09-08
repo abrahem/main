@@ -1417,6 +1417,14 @@ function opensS() {
   document.getElementById("showss").style.display = "block";
   document.getElementById("showsm").style.display = "block";
 }
+function closesSS() {
+  document.getElementById("showsss").style.display = "none";
+  document.getElementById("showsmm").style.display = "none";
+}
+function opensSS() {
+  document.getElementById("showsss").style.display = "block";
+  document.getElementById("showsmm").style.display = "block";
+}
 function outing() {
   document.getElementById("outing").click()
   hideLoading();
@@ -1479,6 +1487,7 @@ $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
 function sharefile(titles,urls) {
+  document.getElementById("urlg").innerText = "";
   app.preloader.show();
   try {
     navigator.share({ title: titles, url: urls });
@@ -1490,6 +1499,8 @@ function sharefile(titles,urls) {
       text: error,
       closeTimeout: 2000,
    });
-   errormsg.open();
+   closesS();
+   opensSS();
+   document.getElementById("urlg").innerText = urls;
   }
 }
