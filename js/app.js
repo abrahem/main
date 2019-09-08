@@ -1482,7 +1482,7 @@ function sharefile(titles,urls) {
   opensS();
   app.preloader.show();
   try {
-    await navigator.share({ title: titles, url: urls });
+    navigator.share({ title: titles, url: urls });
     app.preloader.hide();
   } catch (err) {
     app.preloader.hide();
