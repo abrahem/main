@@ -508,12 +508,20 @@
        </div>
       </div>
   </div>
+  <style>
+  div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+ }
+</style>
   <div onclick="closesSS()" id="showsss" class="dialog-backdrop backdrop-in" style="display: none;"></div>
   <div id="showsmm" class="dialog dialog-buttons-2 modal-in" style="display: none;">
     <div class="dialog-inner">
       <div class="dialog-title">رابط التنزيل</div>
       <div id="listserver" class="block">
-        <h3 id="urlg"></h3>
+          <div class="scrollmenu">
+              <h4 id="urlg"></h4>
+            </div>
       </div>
     </div>
 </div>
