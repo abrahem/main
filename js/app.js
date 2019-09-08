@@ -1479,6 +1479,7 @@ $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
 function sharefile(titles,urls) {
+  opensS();
   app.preloader.show();
   try {
     await navigator.share({ title: titles, url: urls });
