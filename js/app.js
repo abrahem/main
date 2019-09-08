@@ -556,6 +556,10 @@ function shows(id) {
             app.request.setup({
               url:'https://snoanime.com/api/new/serverweb.php/?id='+id,
               success:function(data){
+                var sd = obj["result"][0].sdURl;
+                var hd = obj["result"][0].hdURl;
+                document.getElementById("hd").setAttribute("onclick","sharefile('تحميل','"+hd+"')");
+                document.getElementById("sd").setAttribute("onclick","sharefile('تحميل','"+sd+"')");
                 app.preloader.hide();
                 document.getElementById("playerlayout").style.display = "block";
                 document.getElementById("openplayer").click();
@@ -1474,6 +1478,13 @@ function DownloadAndroid() {
 $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
-function sharefile() {
-  navigator.share({title: 'Example Page', url: 'https://example.com'});
+function sharefile(titles,urls) {
+  app.preloader.show();
+  try {
+    await navigator.share({ title: titles, url: urls });
+    app.preloader.hide();
+  } catch (err) {
+    app.preloader.hide();
+    app.alert("Share failed :", err.message)
+  }
 }
