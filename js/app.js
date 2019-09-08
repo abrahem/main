@@ -1479,13 +1479,17 @@ $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
 function sharefile(titles,urls) {
-  opensS();
   app.preloader.show();
   try {
     navigator.share({ title: titles, url: urls });
     app.preloader.hide();
   } catch (err) {
     app.preloader.hide();
-    app.alert("Share failed :", err.message)
+    var error = "Share failed :" + err.message;
+    var errormsg = app.toast.create({
+      text: error,
+      closeTimeout: 2000,
+   });
+   errormsg.open();
   }
 }
