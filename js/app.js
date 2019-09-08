@@ -1475,9 +1475,5 @@ $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
 function sharefile() {
-    var intent = new Intent({"action":"http://webintents.org/share",
-                             "type":"text/uri-list",
-                             "data":"ibrahim khaled"
-                            });
-    navigator.startActivity(intent);
+  navigator.share({title: 'Example Page', url: 'https://example.com'});
 }
