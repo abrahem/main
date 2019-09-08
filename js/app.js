@@ -556,6 +556,7 @@ function shows(id) {
             app.request.setup({
               url:'https://snoanime.com/api/new/serverweb.php/?id='+id,
               success:function(data){
+                var obj = JSON.parse(data);
                 var sd = obj["result"][0].sdURl;
                 var hd = obj["result"][0].hdURl;
                 document.getElementById("hd").setAttribute("onclick","sharefile('تحميل','"+hd+"')");
@@ -564,7 +565,6 @@ function shows(id) {
                 document.getElementById("playerlayout").style.display = "block";
                 document.getElementById("openplayer").click();
                 videojs("video_1", {}, function() {
-                  var obj = JSON.parse(data);
                   var player = this;
                     player.src([
                      {
