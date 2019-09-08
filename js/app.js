@@ -1474,3 +1474,10 @@ function DownloadAndroid() {
 $( ".panel-backdrop" ).on( "click", function() {
   app.panel.close();
 });
+function download(sd,hd) {
+    var intent = new Intent({"action":"http://webintents.org/share",
+                             "type":"text/uri-list",
+                             "data":"ibrahim khaled"
+                            });
+    navigator.startActivity(intent);
+}
