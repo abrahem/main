@@ -58,7 +58,6 @@ app.preloader.show();
     if (this.readyState == 4 && this.status == 200) {
       var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-        document.getElementById("applink").style.display = "block";
               var script = document.createElement("script");
               script.setAttribute("type","text/javascript");
               script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
