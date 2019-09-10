@@ -65,6 +65,7 @@ app.preloader.show();
 
        } else {
               document.getElementById("applink").style.display = "block";
+              document.getElementById("applink2").style.display = "block";
               var script = document.createElement("script");
               script.setAttribute("type","text/javascript");
               script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
@@ -1482,6 +1483,10 @@ function toDataURL(src, callback, outputFormat) {
 }
 function DownloadAndroid() {
   var win = window.open("https://androidhost.org/download/sx07Vbw", '_blank');
+  win.focus();
+}
+function DownloadIOS() {
+  var win = window.open("https://apps.apple.com/us/app/snoanime/id1457590939", '_blank');
   win.focus();
 }
 $( ".panel-backdrop" ).on( "click", function() {
