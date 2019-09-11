@@ -1482,7 +1482,7 @@ function toDataURL(src, callback, outputFormat) {
   }
 }
 function DownloadAndroid() {
-  var win = window.open("https://androidhost.org/download/sx07Vbw", '_blank');
+  var win = window.open("https://play.google.com/store/apps/details?id=com.snoanime.x", '_blank');
   win.focus();
 }
 function DownloadIOS() {
