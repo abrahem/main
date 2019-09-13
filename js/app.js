@@ -58,7 +58,11 @@ app.preloader.show();
     if (this.readyState == 4 && this.status == 200) {
       var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-              
+              var script = document.createElement("script");
+              script.setAttribute("type","text/javascript");
+              script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
+              script.setAttribute("data-cfasync","false");
+              document.getElementById("adspop").appendChild(script);
       } else {
       var n = navigator.userAgent.includes("SevenZero");
       if (n == true) {
