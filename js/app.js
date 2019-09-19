@@ -55,24 +55,7 @@ $$('#my-login-screen .login-button').on('click', function () {
 app.preloader.show();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var n = navigator.userAgent.includes("99990000");
-      if (n == true) {
-              
-      } else {
-      var n = navigator.userAgent.includes("SevenZero");
-      if (n == true) {
-
-       } else {
-              document.getElementById("applink").style.display = "block";
-              document.getElementById("applink2").style.display = "block";
-              var script = document.createElement("script");
-              script.setAttribute("type","text/javascript");
-              script.setAttribute("src","//deloplen.com/apu.php?zoneid=2803542");
-              script.setAttribute("data-cfasync","false");
-              document.getElementById("adspop").appendChild(script);
-       }
-}      
+    if (this.readyState == 4 && this.status == 200) {      
     if (localStorage.getItem("SaveLogin")) {
 	   toastBottom.open();
 	   document.getElementById("btns").innerText = "تسجيل خروج";
