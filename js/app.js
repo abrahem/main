@@ -927,12 +927,13 @@ function androidcode() {
 }
 //listanime
 function golist() {
+    document.getElementById("ers").style.display = "none"
     app.preloader.show();
   showSearch();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-          app.preloader.hide();
+    app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
     for (i = 0; i < obj.length; i++) {
@@ -945,6 +946,8 @@ function golist() {
         var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
         createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
         }
+          document.getElementById("ers").style.display = "block"
+
     }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
