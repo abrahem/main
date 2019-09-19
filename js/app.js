@@ -1402,6 +1402,11 @@ function scrolled(o)
   {
     if(o.offsetHeight + o.scrollTop == o.scrollHeight)
     {
-        alert("End");
+        $(function () {
+        $('#datg div:hidden').slice(0, 60).show();
+        if ($('#datg div').length == $('#datg div:visible').length) {
+            
+        }
+       });
     }
   }
