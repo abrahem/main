@@ -951,17 +951,18 @@ function golist() {
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
     for (i = 0; i < obj.length; i++) {
-      var n = navigator.userAgent.includes("99990000");
+        var myVar = setInterval(myTimer, 1000);
+        function myTimer() {
+        var n = navigator.userAgent.includes("99990000");
         if (n == true) {
          var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
-      var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-      createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
+        }
     }
-    animedata = obj;
-    createLoader();
   }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
@@ -1399,3 +1400,10 @@ function sharefile(titles,urls) {
    document.getElementById("urlg").innerText = urls;
   }
 }
+function scrolled(o)
+  {
+    if(o.offsetHeight + o.scrollTop == o.scrollHeight)
+    {
+        alert("End");
+    }
+  }
