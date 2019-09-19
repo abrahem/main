@@ -950,9 +950,7 @@ function golist() {
   if (this.readyState == 4 && this.status == 200) {
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    maxItems = obj.length;
-    animedata = JSON.stringify(obj);
-    for (i = 0; i < 40; i++) {
+    for (i = 0; i < obj.length; i++) {
       var n = navigator.userAgent.includes("99990000");
         if (n == true) {
          var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
@@ -1038,115 +1036,6 @@ function backtomain() {
   document.getElementById("newsearch").style.display = "none";
   document.getElementById("showonsearch").style.display = "none";
   document.getElementById("showonsearch").innerHTML = "";
-}
-function createLoader() {
-  var allowInfinite = true;
-
-  // Last loaded index
-  var lastItemIndex = document.querySelector("#datg").childElementCount;
-    
-  // Append items per load
-  var itemsPerLoad = 20;
-  
-  // Attach 'infinite' event handler
-  $$('.infinite-scroll-content').on('infinite', function () {
-    // Exit, if loading in progress
-    if (!allowInfinite) return;
-  
-    // Set loading flag
-    allowInfinite = false;
-  
-    // Emulate 1s loading
-    setTimeout(function () {
-      // Reset loading flag
-      allowInfinite = true;
-  
-      if (lastItemIndex >= maxItems) {
-        // Nothing more to load, detach infinite scroll events to prevent unnecessary loadings
-        app.infiniteScroll.destroy('.infinite-scroll-content');
-        // Remove preloader
-        $$('.infinite-scroll-preloader').remove();
-        return;
-      }
-  
-      // Generate new items HTML
-      var html = '';
-      for (var i = lastItemIndex + 1; i <= lastItemIndex + itemsPerLoad; i++) {
-        isd = i - 1;
-        var oimg = animedata[isd].image;
-        var id = 'https://snoanime.com/api/new/info.php/?url='+animedata[isd].id;
-        html += loadmor(oimg,animedata[isd].name,animedata[isd].status,id,animedata[isd].status,animedata[isd].year);
-      }
-  
-      // Append new items
-      $$('#datg').append(html);
-  
-      // Update last loaded index
-      lastItemIndex = document.querySelector("#datg").childElementCount;
-    }, 1000);
-  });
-}
-// Loading flag
-function loadmor(img,name,title,id,state,starts) {
-  var content = document.getElementById("showonsearch");
-  //info
-  var lid = document.createElement("li");
-  
-  lid.style.display = "inherit";
-  
-  var infos = document.createElement("a");
-  
-  infos.className = "popup-open";
-  infos.onclick = function() {clears()};
-  infos.href = "#";
-  infos.setAttribute("data-popup",".popup-about")
-  //Div
-  var div1 = document.createElement("div");
-  div1.style = 'style="height: 160;"';
-  div1.className = "card";
-  div1.setAttribute("onclick","load('"+id+"','"+name+"','"+img+"','"+state+"','"+starts+"')");
-  var div2 = document.createElement("div");
-  div2.className = "card-content"
-  var div3 = document.createElement("div");
-  div3.className = "list media-list no-ios-edges"
-  var div4 = document.createElement("div");
-  div4.className = "item-media"
-  var div5 = document.createElement("div");
-  div5.className = "item-inner";
-  var div7 = document.createElement("div");
-  div7.className = "item-subtitle";
-  div7.innerText = name;
-  var div8 = document.createElement("div");
-  div8.className = "item-subtitle";
-  div8.innerText = title;
-
-  //Div
-  //UL And Li
-  var ul = document.createElement("ul");
-  var li = document.createElement("li");
-  li.className = "item-content"
-  //UL And Li
-  //Image
-   var image = document.createElement("img");
-   image.setAttribute("data-src",img);
-   image.setAttribute("src",img);
-   image.onerror = function() {this.src = img; console.log('This Image Is Reloader :> '+this.src)};
-   image.width = "125";
-   image.height = "160";
-  //Image
-  //Append
-  div4.appendChild(image);
-  div5.appendChild(div7);
-  div5.appendChild(div8);
-  li.appendChild(div4);
-  li.appendChild(div5);
-  ul.appendChild(li);
-  div3.appendChild(ul);
-  div2.appendChild(div3);
-  infos.appendChild(div2)
-  lid.appendChild(infos);
-  div1.appendChild(lid);
-  return div1.outerHTML;
 }
 function getFavorite() {
   var person = {};
