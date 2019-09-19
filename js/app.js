@@ -1322,6 +1322,7 @@ function opennews() {
 }
 function hideSearch() {
   document.getElementById("btnsearch").style.display = "none";
+  document.getElementById("datg").innerHTML = "";
 }
 function showSearch() {
   document.getElementById("btnsearch").style.display = "block";
