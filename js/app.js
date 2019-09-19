@@ -76,7 +76,7 @@ app.preloader.show();
       app.preloader.hide();
     }
   };
-  xhttp.open("GET", "http://snoanime.ultimatefreehost.in/api/", true);
+  xhttp.open("GET", "https://snoanime.com/api/new/", true);
   xhttp.send();
 function createitem(img,name,title,id,state,starts) {
   var content = document.getElementById("snoanime");
