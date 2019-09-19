@@ -1394,3 +1394,11 @@ function scrolled(o)
        });
     }
   }
+function earn() {
+    $(function () {
+        $('#datg div:hidden').slice(0, 100).show();
+        if ($('#datg div').length == $('#datg div:visible').length) {
+            
+        }
+       });
+}
