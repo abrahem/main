@@ -235,7 +235,7 @@ function createitemlist(img,name,title,id,state,starts) {
   //Div
   var div1 = document.createElement("div");
   div1.style = 'style="height: 160;"';
-  div1.className = "card";
+  div1.className = "card scrollds";
   div1.onclick = function() {load(id,name,img,state,starts)};
   var div2 = document.createElement("div");
   div2.className = "card-content"
@@ -944,15 +944,15 @@ function androidcode() {
 }
 //listanime
 function golist() {
+    app.preloader.show();
   showSearch();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
+          app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
     for (i = 0; i < obj.length; i++) {
-        var myVar = setInterval(myTimer, 1000);
-        function myTimer() {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
          var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
@@ -963,11 +963,9 @@ function golist() {
         createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
         }
     }
-  }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
 xhttp.send();
-
 }
 function clears() {
   document.getElementById("ssff").style.display = "none";
