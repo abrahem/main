@@ -135,8 +135,3 @@ $slider-bg-color: lighten($primary-background-color, 33%);
 .scrollds:nth-child(n+41) {
     display:none;
 }
-#data .virtual-list (
-    margin-block-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-)

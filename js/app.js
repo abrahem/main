@@ -927,7 +927,7 @@ function androidcode() {
 }
 //listanime
 function golist() {
-  app.preloader.show();
+    app.preloader.show();
   showSearch();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -935,21 +935,20 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-      var virtualList = app.virtualList.create({
-  // List Element
-  el: '.virtual-list',
-  // Pass array with items
-  items: obj,
-  // List item Template7 template
-  itemTemplate:
-  '<div class="card" style=""><li style="display: inherit;"><a class="popup-open" href="#" data-popup=".popup-about"><div class="card-content"><div class="list media-list no-ios-edges"><ul><li class="item-content"><div class="item-media"><img data-src="{{image}}" src="{{image}}" width="125" height="160"></div><div class="item-inner"><div class="item-subtitle">{{name}}</div><div class="item-subtitle">{{status}}</div></div></li></ul></div></div></a></li></div>',
-  // Item height
-  height: app.theme === 'ios' ? 63 : (app.theme === 'md' ? 73 : 46),
-});
+    for (i = 0; i < obj.length; i++) {
+        var n = navigator.userAgent.includes("99990000");
+        if (n == true) {
+         var oimg = obj[i].image;
+        } else {
+          var oimg = obj[i].image;
+        }
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        createitemlist(oimg,obj[i].name,obj[i].status,id,[i].status,[i].year);
+        }
     }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
-xhttp.send(); 
+xhttp.send();
 }
 function clears() {
   document.getElementById("ssff").style.display = "none";
