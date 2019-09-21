@@ -935,7 +935,7 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    for (i = 0; i < obj.length; i++) {
+    for (i = 0; i < 30; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
          var oimg = obj[i].image;
