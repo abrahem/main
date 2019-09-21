@@ -927,7 +927,6 @@ function androidcode() {
 }
 //listanime
 function golist() {
-    document.getElementById("ers").style.display = "none"
     app.preloader.show();
   showSearch();
   var xhttp = new XMLHttpRequest();
