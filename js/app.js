@@ -66,7 +66,7 @@ app.preloader.show();
       for (i = 0; i < obj.length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+         var oimg = obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
@@ -939,7 +939,7 @@ function golist() {
     for (i = 0; i < obj.length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+         var oimg = obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
@@ -998,7 +998,7 @@ app.request.setup({
   for (i = 0; i < obj.length; i++) {
     var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+         var oimg = obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
@@ -1054,7 +1054,7 @@ function openf() {
       for (i = 0; i < obj.length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+         var oimg = obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
@@ -1090,7 +1090,7 @@ app.request.setup({
   for (i = 0; i < obj.length; i++) {
     var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = "https://snoanime.com/image.php/?name="+obj[i].image;
+         var oimg = obj[i].image;
         } else {
           var oimg = obj[i].image;
         }
