@@ -132,6 +132,6 @@ $slider-bg-color: lighten($primary-background-color, 33%);
     display: -ms-flexbox;
     display: flex;
 }
-.scrollds:nth-child(n+41) {
-    display:none;
+.scrollds {
+
 }
