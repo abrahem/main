@@ -935,15 +935,15 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    for (i = 0; i < obj[2].length; i++) {
+    for (i = 0; i < obj.length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = obj[2][i].image;
+         var oimg = obj[i].image;
         } else {
-          var oimg = obj[2][i].image;
+          var oimg = obj[i].image;
         }
-        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[2][i].id;
-        createitemlist(oimg,obj[2][i].name,obj[2][i].status,id,obj[2][i].status,obj[2][i].year);
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        createitemlist(oimg,obj[i].name,obj[i].status,id,[i].status,[i].year);
         }
     }
 };
