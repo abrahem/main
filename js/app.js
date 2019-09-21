@@ -943,7 +943,7 @@ function golist() {
         } else {
           var oimg = obj[0][i].image;
         }
-        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[0][i].id;
         createitemlist(oimg,obj[0][i].name,obj[0][i].status,id,obj[0][i].status,obj[0][i].year);
         }
     }
@@ -1386,15 +1386,15 @@ function sharefile(titles,urls) {
 function getValue() {
     setTimeout(function () {
         document.getElementById("datg").innerHTML = "";
-        for (i = 0; i < maxItems[document.getElementById("nxtmax").value]; i++) {
+        for (i = 0; i < maxItems[document.getElementById("nxtmax").value].length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = obj[0][i].image;
+         var oimg = maxItems[document.getElementById("nxtmax").value][i].image;
         } else {
-          var oimg = obj[0][i].image;
+          var oimg = maxItems[document.getElementById("nxtmax").value][i].image;
         }
-        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-        createitemlist(oimg,obj[0][i].name,obj[0][i].status,id,obj[0][i].status,obj[0][i].year);
+        var id = 'https://snoanime.com/api/new/info.php/?url='+maxItems[document.getElementById("nxtmax").value][i].id;
+        createitemlist(oimg,maxItems[document.getElementById("nxtmax").value][i].name,maxItems[document.getElementById("nxtmax").value][i].status,id,maxItems[document.getElementById("nxtmax").value][i].status,maxItems[document.getElementById("nxtmax").value][i].year);
         }
     }, 100);
 }
