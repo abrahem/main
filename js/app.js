@@ -935,15 +935,16 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    for (i = 0; i < 30; i++) {
+    document.getElementById("nxtmax").setAttribute("max",obj.length)
+    for (i = 0; i < obj[0].length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = obj[i].image;
+         var oimg = obj[0][i].image;
         } else {
-          var oimg = obj[i].image;
+          var oimg = obj[0][i].image;
         }
         var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-        createitemlist(oimg,obj[i].name,obj[i].status,id,[i].status,[i].year);
+        createitemlist(oimg,obj[0][i].name,obj[0][i].status,id,obj[0][i].status,obj[0][i].year);
         }
     }
 };
