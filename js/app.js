@@ -936,18 +936,17 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    for (i = 0; i < obj.length; i++) {
+    for (i = 0; i < obj[2].length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
-         var oimg = obj[i].image;
+         var oimg = obj[2][i].image;
         } else {
-          var oimg = obj[i].image;
+          var oimg = obj[2][i].image;
         }
-        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
-        createitemlist(oimg,obj[i].name,obj[i].status,id,obj[i].status,obj[i].year);
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[2][i].id;
+        createitemlist(oimg,obj[2][i].name,obj[2][i].status,id,obj[2][i].status,obj[2][i].year);
         }
-          document.getElementById("ers").style.display = "block"
-
+        document.getElementById("ers").style.display = "block"
     }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
@@ -1384,24 +1383,4 @@ function sharefile(titles,urls) {
    opensSS();
    document.getElementById("urlg").innerText = urls;
   }
-}
-function scrolled(o)
-  {
-    if(o.offsetHeight + o.scrollTop == o.scrollHeight)
-    {
-        $(function () {
-        $('#datg div:hidden').slice(0, 60).show();
-        if ($('#datg div').length == $('#datg div:visible').length) {
-            
-        }
-       });
-    }
-  }
-function earn() {
-    $(function () {
-        $('#datg div:hidden').slice(0, 100).show();
-        if ($('#datg div').length == $('#datg div:visible').length) {
-            
-        }
-       });
 }
