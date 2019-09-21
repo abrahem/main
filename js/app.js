@@ -946,7 +946,6 @@ function golist() {
         var id = 'https://snoanime.com/api/new/info.php/?url='+obj[2][i].id;
         createitemlist(oimg,obj[2][i].name,obj[2][i].status,id,obj[2][i].status,obj[2][i].year);
         }
-        document.getElementById("ers").style.display = "block"
     }
 };
 xhttp.open("GET", "https://snoanime.com/api/new/list.php", true);
