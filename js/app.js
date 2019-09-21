@@ -935,7 +935,7 @@ function golist() {
     app.preloader.hide();
     document.getElementById("datg").innerHTML = "";
     var obj = JSON.parse(xhttp.responseText);
-    addlists(obj.length);
+      maxItems = obj;
     for (i = 0; i < obj[0].length; i++) {
         var n = navigator.userAgent.includes("99990000");
         if (n == true) {
@@ -1383,7 +1383,18 @@ function sharefile(titles,urls) {
    document.getElementById("urlg").innerText = urls;
   }
 }
-function addlists(max) {
-    document.getElementById("inners").innerHTML = "";
-    document.getElementById("inners").innerHTML = '<div class="fab fab-extended fab-center-bottom color-red"><div class="stepper stepper-fill stepper-init" data-wraps="true" data-autorepeat="true" data-autorepeat-dynamic="true" data-decimal-point="2" data-manual-input-mode="true"><div class="stepper-button-minus"></div><div class="stepper-input-wrap" style=" background-color: white; "><input id="nxtmax" type="text" value="0" min="0" max="'+max+'" step="1" class="input-with-value"></div><div class="stepper-button-plus"></div></div></div>'
+function getValue() {
+    setTimeout(function () {
+        document.getElementById("datg").innerHTML = "";
+        for (i = 0; i < maxItems[document.getElementById("nxtmax").value]; i++) {
+        var n = navigator.userAgent.includes("99990000");
+        if (n == true) {
+         var oimg = obj[0][i].image;
+        } else {
+          var oimg = obj[0][i].image;
+        }
+        var id = 'https://snoanime.com/api/new/info.php/?url='+obj[i].id;
+        createitemlist(oimg,obj[0][i].name,obj[0][i].status,id,obj[0][i].status,obj[0][i].year);
+        }
+    }, 100);
 }
