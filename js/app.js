@@ -991,6 +991,7 @@ app.request.setup({
   success:function(data){
     obj = JSON.parse(data);
     document.getElementById("hideonsearch").style.display = "none";
+      document.getElementById("fablist").style.display = "none";
   document.getElementById("showonsearch").style.display = "block";
   document.getElementById("newsearch").style.display = "block";
   for (i = 0; i < obj.length; i++) {
@@ -1016,6 +1017,7 @@ app.request({method:'GET'});
 }
 function backtomain() {
   document.getElementById("hideonsearch").style.display = "block";
+  document.getElementById("fablist").style.display = "block";
   document.getElementById("newsearch").style.display = "none";
   document.getElementById("showonsearch").style.display = "none";
   document.getElementById("showonsearch").innerHTML = "";
