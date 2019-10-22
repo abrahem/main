@@ -52,6 +52,7 @@ $$('#my-login-screen .login-button').on('click', function () {
   // Alert username and password
   app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
 });
+
 app.preloader.show();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -577,7 +578,7 @@ function shows(id) {
             }
       }
 }
-
+sendFav("تنبيه","تتوفر صيانة في التطبيق سيتم الانتهاء منها قريبا أنشاء الله","");
 function sendDataToAndroid(toast,id,ads,bnads,appid) {
         MyFunction.onButtonClick(toast,id,ads,bnads,appid);
     }
