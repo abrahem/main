@@ -578,7 +578,6 @@ function shows(id) {
             }
       }
 }
-sendFav("تنبيه","تتوفر صيانة في التطبيق سيتم الانتهاء منها قريبا أنشاء الله","");
 function sendDataToAndroid(toast,id,ads,bnads,appid) {
         MyFunction.onButtonClick(toast,id,ads,bnads,appid);
     }
