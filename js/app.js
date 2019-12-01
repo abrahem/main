@@ -52,15 +52,7 @@ $$('#my-login-screen .login-button').on('click', function () {
   // Alert username and password
   app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
 });
-app.request.get('http://ip-api.com/json', function (data) {
-  data = JSON.parse(data);
-  var nS = data.country.includes("Iraq");
-  if (nS == true) {
-    localStorage.setItem("IRAQ","yes");
-  } else {
-    localStorage.setItem("IRAQ","no")
-  }
-});
+
 app.preloader.show();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -538,12 +530,7 @@ app.request({method:'GET'});
 function shows(id) {
 	    var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-        var nS = localStorage.getItem("IRAQ").includes("yes")
-        if (nS == true) {
-          sendDataToAndroid(id,id,"ca-app-pub-9372585201524216/3780639788","ca-app-pub-9372585201524216/3780639788","ca-app-pub-9372585201524216~3723416579");
-        } else {
-          sendDataToAndroid(id,id,"ca-app-pub-9372585201524216/1486370747","ca-app-pub-9372585201524216/3420175615","ca-app-pub-9372585201524216~1132923622");
-        }
+          sendDataToAndroid(id,id,"ca-app-pub-9372585201524216/3780639788","ca-app-pub-9372585201524216/9574716850","ca-app-pub-9372585201524216~3723416579");
       } else {
       var n = navigator.userAgent.includes("SevenZero");
       if (n == true) {
