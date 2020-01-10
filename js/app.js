@@ -38,7 +38,6 @@ app.sheet.create({
   swipeToClose: true,
   backdrop: true,
 });
-
 var maxItems = "";
 var animedata = "";
 // Login Screen Demo
@@ -578,6 +577,18 @@ function shows(id) {
             }
       }
 }
+function hscontrol() {
+  if ($$('#hides').hasClass('hides')) {
+    videojs.players.video_1.controlBar.show();
+    $$('#hides').removeClass("hides");
+    $$('#hides').addClass("shows");
+  } else {
+    videojs.players.video_1.controlBar.hide();
+    $$('#hides').addClass("hides")
+    $$('#hides').removeClass("shows");
+  }
+}
+
 function sendDataToAndroid(toast,id,ads,bnads,appid) {
         MyFunction.onButtonClick(toast,id,ads,bnads,appid);
     }
