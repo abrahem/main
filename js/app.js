@@ -84,12 +84,7 @@ app.preloader.show();
       app.preloader.hide();
       var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-        app.dialog.confirm('كيف حالكم مستخدمي تطبيق سنو أنمي  يتوفر تحديث جديد للتطبيق أرجو منكم التحديث للأستمرار بمشاهدة الحلقات أذا لم يظهر لك  التحديث قم بحذف النسخة القديمة وقم بتثبيت النسخة الجديدة', function () {
-            window.location.href = "market://details?id=com.snoanime.x";
-        });      
-        app.dialog.confirm('يتوفر تحديث جديد أذا لم يظهر تحديث قم بحذف القديم أولا', function () {
-          window.location.href = "market://details?id=com.snoanime.x";
-      });     
+            window.location.href = "market://details?id=com.snoanime.x";  
       } else {
 
       }
