@@ -11,6 +11,12 @@ var app  = new Framework7({
     threshold: 50,
     sequential: false,
   },
+  dialog: {
+    // set default title for all dialog shortcuts
+    title: 'SnoAnime X',
+    // change default "OK" button text
+    buttonOk: 'تحديث',
+  },
   data: function () {
     return {
       user: {
@@ -28,6 +34,17 @@ var app  = new Framework7({
   // App routes
   routes: routes,
 });
+
+var n = navigator.userAgent.includes("99990000");
+      if (n == true) {
+        $$('.open-confirm').on('click', function () {
+          app.dialog.confirm('كيف حالكم مستخدمي تطبيق سنو أنمي  يتوفر تحديث جديد للتطبيق أرجو منكم التحديث للأستمرار بمشاهدة الحلقات أذا لم يظهر لك  التحديث قم بحذف النسخة القديمة وقم بتثبيت النسخة الجديدة', function () {
+            window.location.href = "market://details?id=com.snoanime.x";
+          });
+        });        
+      } else {
+
+      }
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
   url: '/'
@@ -573,7 +590,6 @@ function shows(id) {
               },
             })
             app.request({method:'GET'});
-
             }
       }
 }
