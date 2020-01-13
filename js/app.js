@@ -37,10 +37,8 @@ var app  = new Framework7({
 
 var n = navigator.userAgent.includes("99990000");
       if (n == true) {
-        $$('.open-confirm').on('click', function () {
           app.dialog.confirm('كيف حالكم مستخدمي تطبيق سنو أنمي  يتوفر تحديث جديد للتطبيق أرجو منكم التحديث للأستمرار بمشاهدة الحلقات أذا لم يظهر لك  التحديث قم بحذف النسخة القديمة وقم بتثبيت النسخة الجديدة', function () {
             window.location.href = "market://details?id=com.snoanime.x";
-          });
         });        
       } else {
 
