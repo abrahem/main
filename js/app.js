@@ -35,14 +35,7 @@ var app  = new Framework7({
   routes: routes,
 });
 
-var n = navigator.userAgent.includes("99990000");
-      if (n == true) {
-          app.dialog.confirm('كيف حالكم مستخدمي تطبيق سنو أنمي  يتوفر تحديث جديد للتطبيق أرجو منكم التحديث للأستمرار بمشاهدة الحلقات أذا لم يظهر لك  التحديث قم بحذف النسخة القديمة وقم بتثبيت النسخة الجديدة', function () {
-            window.location.href = "market://details?id=com.snoanime.x";
-        });        
-      } else {
 
-      }
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
   url: '/'
@@ -89,6 +82,14 @@ app.preloader.show();
         createitem(oimg,obj[i].name,obj[i].epName,id,obj[i].status,obj[i].year);
       }
       app.preloader.hide();
+      var n = navigator.userAgent.includes("99990000");
+      if (n == true) {
+        app.dialog.confirm('كيف حالكم مستخدمي تطبيق سنو أنمي  يتوفر تحديث جديد للتطبيق أرجو منكم التحديث للأستمرار بمشاهدة الحلقات أذا لم يظهر لك  التحديث قم بحذف النسخة القديمة وقم بتثبيت النسخة الجديدة', function () {
+            window.location.href = "market://details?id=com.snoanime.x";
+        });        
+      } else {
+
+      }
     }
   };
   xhttp.open("GET", "https://snoanime.com/api/new/", true);
