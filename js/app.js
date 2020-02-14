@@ -90,7 +90,7 @@ app.preloader.show();
       }
     }
   };
-  xhttp.open("GET", "https://snoanime.com/api/new/", true);
+  xhttp.open("GET", "https://snoanime.net/api/new/", true);
   xhttp.send();
 function createitem(img,name,title,id,state,starts) {
   var content = document.getElementById("snoanime");
