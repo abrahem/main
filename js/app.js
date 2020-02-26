@@ -501,7 +501,13 @@ app.request.setup({
          btn.setAttribute("onclick","shows('"+datag+"')");
          document.getElementById("list-ep").appendChild(btn);
       }
-      showallcom(usl);
+      document.getElementById("km2").innerText = ""+data["commants"].length;
+      for (i = 0; i < data["commants"].length; i++) {
+      var name = data["commants"][i].name;
+      var time = data["commants"][i].time;
+      var commant = data["commants"][i].commants;
+      showCom(time,name,commant);
+      }
   //epName
   var idgs = localStorage.getItem("id");
   idgs = idgs.replace("https://snoanime.com/ns/api/new/info.php/?url=", "");
@@ -1289,26 +1295,7 @@ function logout() {
     document.getElementById("btns").innerText = "تسجيل دخول أو أنشاء حساب";
     userclose();
 }
-function showallcom(usl) {
-  app.request.setup({
-    url:usl,
-    success:function(data){
-      data = JSON.parse(data);
-      document.getElementById("km2").innerText = ""+data.length;
-      for (i = 0; i < data.length; i++) {
-      var name = data[i].name;
-      var time = data[i].time;
-      var commant = data[i].commants;
-        showCom(time,name,commant);
-        }
-    },
-    error:function(data){
-      app.request({method:'GET'});
-      errornet.open();
-    },
-  })
-  app.request({method:'GET'});
-}
+
 function closesS() {
   document.getElementById("showss").style.display = "none";
   document.getElementById("showsm").style.display = "none";
