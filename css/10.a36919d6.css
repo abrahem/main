@@ -1,1 +1,0 @@
-.editor{position:relative}.editor__floating-menu{position:absolute;z-index:1;margin-top:-0.25rem;visibility:hidden;opacity:0;transition:opacity 0.2s,visibility 0.2s}.editor__floating-menu.is-active{opacity:1;visibility:visible}
