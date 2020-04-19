@@ -1,38 +1,51 @@
 {
-  "name": "framework7-template-single-view",
-  "version": "1.0.0",
-  "description": "Framework7 single view app template",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/framework7io/framework7-template-single-view.git"
-  },
+  "name": "snoanime",
+  "version": "0.0.1",
+  "description": "anime",
+  "productName": "SnoAnime X",
+  "cordovaId": "com.snoanime.edge",
+  "capacitorId": "",
+  "author": "abrahem <abrheem16@gmail.com>",
+  "private": true,
   "scripts": {
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
+    "test": "echo \"No test specified\" && exit 0",
     "serve": "http-server ./ -o -c 1 -a localhost",
-    "copy-f7": "cpy 'node_modules/framework7/js/*.*' framework7/js && cpy 'node_modules/framework7/css/*.*' framework7/css && cpy 'node_modules/framework7-icons/fonts/*.*' fonts && cpy 'node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2}' fonts",
-    "start": "npm run serve",
-    "postinstall": "npm run copy-f7"
+    "start": "npm install",
+    "postinstall": "quasar dev"
   },
-  "keywords": [
-    "framework7",
-    "template",
-    "ios",
-    "android",
-    "mobile",
-    "app",
-    "cordova",
-    "phonegap"
-  ],
-  "author": "Vladimir Kharlampidi",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/framework7io/framework7-template-single-view/issues"
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.18.1",
+    "fuse.js": "^5.1.0",
+    "highlight.js": "^9.18.1",
+    "quasar": "^1.0.0",
+    "tippy.js": "^6.2.0",
+    "tiptap": "^1.27.0",
+    "tiptap-extensions": "^1.29.0",
+    "vue-svgicon": "^3.2.6"
   },
-  "homepage": "https://github.com/framework7io/framework7-template-single-view#readme",
   "devDependencies": {
-    "cpy-cli": "^1.0.1",
-    "framework7": "^4.0.0",
-    "framework7-icons": "^2.2.0",
-    "http-server": "^0.10.0",
-    "material-design-icons": "^3.0.1"
+    "@quasar/app": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.1.2"
+  },
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ],
+  "resolutions": {
+    "@babel/parser": "7.7.5"
   }
 }
