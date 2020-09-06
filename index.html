@@ -1,2 +1,52 @@
-<!DOCTYPE html><html><head><base href=/ ><title>SnoAnime X</title><meta name=data content=mobile><meta charset=utf-8><meta name=description content=anime><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><link rel=icon href=statics/icons/favicon.png type=image/x-icon><link href=/css/10.6f86d69b.css rel=prefetch><link href=/css/11.6f86d69b.css rel=prefetch><link href=/css/12.6f86d69b.css rel=prefetch><link href=/css/13.6f86d69b.css rel=prefetch><link href=/css/14.2bd26817.css rel=prefetch><link href=/css/3.3105200a.css rel=prefetch><link href=/css/4.f20cd65f.css rel=prefetch><link href=/css/5.ded82c17.css rel=prefetch><link href=/css/6.221b4013.css rel=prefetch><link href=/css/7.e41d2e81.css rel=prefetch><link href=/css/8.20871f7b.css rel=prefetch><link href=/css/9.a36919d6.css rel=prefetch><link href=/js/10.898a670e.js rel=prefetch><link href=/js/11.0d04490c.js rel=prefetch><link href=/js/12.5f5b695d.js rel=prefetch><link href=/js/13.1d9e6730.js rel=prefetch><link href=/js/14.122362b9.js rel=prefetch><link href=/js/15.7f308ed3.js rel=prefetch><link href=/js/16.5671818d.js rel=prefetch><link href=/js/17.95606ca4.js rel=prefetch><link href=/js/18.7e454ab3.js rel=prefetch><link href=/js/19.e0c79ca0.js rel=prefetch><link href=/js/3.5862f75c.js rel=prefetch><link href=/js/4.d00eeb42.js rel=prefetch><link href=/js/5.62fb59b5.js rel=prefetch><link href=/js/6.c9c2268c.js rel=prefetch><link href=/js/7.1052933c.js rel=prefetch><link href=/js/8.bcdab3ae.js rel=prefetch><link href=/js/9.e7ab0112.js rel=prefetch><link href=/css/app.97f2f8fe.css rel=preload as=style><link href=/js/app.7833a833.js rel=preload as=script><link href=/js/runtime.b905cc47.js rel=preload as=script><link href=/js/vendor.5001f298.js rel=preload as=script><link href=/css/app.97f2f8fe.css rel=stylesheet></head><body><div id=q-app></div><script src=/js/vendor.5001f298.js></script><script src=/js/app.7833a833.js></script><script src=/js/runtime.b905cc47.js></script></body><script>function showDialog(id) {
-    }</script></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--
+  Customize this policy to fit your own app's needs. For more guidance, see:
+      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+  Some notes:
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+      * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+
+  <meta name="theme-color" content="#182128">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>SAnime</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+  <link rel="icon" href="static/icons/favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+</head>
+<body>
+  <div id="app"class="theme-dark"></div>
+  
+  <!-- built script files will be auto injected -->
+<script src="js/app.js"></script></body>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCqXP706krgzsy1fXhRFIj3qv9jzwJEkY4",
+    authDomain: "sanime165.firebaseapp.com",
+    databaseURL: "https://sanime165.firebaseio.com",
+    projectId: "sanime165",
+    storageBucket: "sanime165.appspot.com",
+    messagingSenderId: "791962452798",
+    appId: "1:791962452798:web:eeaf64b35b782002d5226f",
+    measurementId: "G-F8LL99BHFF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</html>
