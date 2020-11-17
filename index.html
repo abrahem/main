@@ -1,32 +1,48 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!--
-  Customize this policy to fit your own app's needs. For more guidance, see:
-      https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-  Some notes:
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-      * Enable inline JS: add 'unsafe-inline' to default-src
-  -->
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+<meta charset="utf-8">
 
-  <meta name="theme-color" content="#182128">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="google-site-verification" content="Sti2pZsC90Bimh37P1t1LRB22zbr9bRYvwByZNN7_1o" />
-  <title>SAnime | أس أنمي</title>
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
-  <link rel="icon" href="static/icons/favicon.png">
+<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content:">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+<meta name="theme-color" content="#182128">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="google-site-verification" content="Sti2pZsC90Bimh37P1t1LRB22zbr9bRYvwByZNN7_1o" />
+<title>SAnime</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+<link rel="icon" href="static/icons/favicon.png">
+<link rel="manifest" href="/manifest.json">
+  <script>
+if (navigator.userAgent.indexOf("SevenZero") !== -1) {
+window.location.href = "https://sanime.net";
+}
+  </script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
 </head>
 <body>
-  <div id="app"class="theme-dark"></div>
-  <script>
-    window.location.href = "https://sanime.net/";
+<div id="app" class="theme-dark"></div>
+
+<script src="js/app.js"></script></body>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCqXP706krgzsy1fXhRFIj3qv9jzwJEkY4",
+    authDomain: "sanime165.firebaseapp.com",
+    databaseURL: "https://sanime165.firebaseio.com",
+    projectId: "sanime165",
+    storageBucket: "sanime165.appspot.com",
+    messagingSenderId: "791962452798",
+    appId: "1:791962452798:web:eeaf64b35b782002d5226f",
+    measurementId: "G-F8LL99BHFF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
 </html>
